@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to Flask Refactor</h1>
+        <p>A powerful Flask application template with Vermilion styling</p>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Modular Design</h3>
+                <p>Built with maintainability and scalability in mind.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Blueprint Structure</h3>
+                <p>Organized using Flask blueprints for better code organization.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Modern Stack</h3>
+                <p>Leveraging the latest Flask features and Python capabilities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="api-docs" id="api">
+    <div class="container">
+        <h2>Pet API Documentation</h2>
+        <p>Our API provides endpoints for generating sample pet data following the Swagger Petstore schema.</p>
+        
+        <div class="endpoint-card">
+            <h3>Random Pet Generator</h3>
+            <div class="endpoint-details">
+                <span class="method">GET</span>
+                <span class="url">/api/pets/random</span>
+            </div>
+            <p>Returns a randomly generated pet object with realistic data.</p>
+            <h4>Example Response:</h4>
+            <pre><code>{
+  "id": 5782,
+  "name": "Pet-a7bc93f4",
+  "category": {
+    "id": 3,
+    "name": "Birds"
+  },
+  "photoUrls": [
+    "https://example.com/pet/photos/4872.jpg",
+    "https://example.com/pet/photos/1298.jpg"
+  ],
+  "tags": [
+    {
+      "id": 7,
+      "name": "friendly"
+    },
+    {
+      "id": 15,
+      "name": "playful"
+    }
+  ],
+  "status": "available"
+}</code></pre>
+        </div>
+        
+        <div class="endpoint-card">
+            <h3>Batch Pet Generator</h3>
+            <div class="endpoint-details">
+                <span class="method">GET</span>
+                <span class="url">/api/pets/random/batch/{count}</span>
+            </div>
+            <p>Returns multiple randomly generated pets in a single request.</p>
+            <h4>Parameters:</h4>
+            <ul class="parameter-list">
+                <li><strong>count</strong>: Number of pets to generate (integer, max 50)</li>
+            </ul>
+            <h4>Example Request:</h4>
+            <pre><code>/api/pets/random/batch/3</code></pre>
+            <h4>Example Response:</h4>
+            <pre><code>[
+  {
+    "id": 1234,
+    "name": "Pet-a8b7c6d5",
+    "category": { "id": 2, "name": "Cats" },
+    "photoUrls": ["https://example.com/pet/photos/1234.jpg"],
+    "tags": [
+      { "id": 5, "name": "friendly" }
+    ],
+    "status": "available"
+  },
+  /* Additional pet objects... */
+]</code></pre>
+        </div>
+        
+        <div class="endpoint-card">
+            <h3>Route Debugging</h3>
+            <div class="endpoint-details">
+                <span class="method">GET</span>
+                <span class="url">/api/debug/routes</span>
+            </div>
+            <p>Lists all registered routes in the API blueprint (useful for developers).</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
